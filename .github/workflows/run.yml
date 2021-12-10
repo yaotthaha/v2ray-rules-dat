@@ -172,7 +172,10 @@ jobs:
       - name: Add Personal Rule
         run: |
           cd community/data || exit 1
-          wget -O gdut-eduweb https://raw.githubusercontent.com/yaotthaha/gdut-edu-rule/master/gdut-edu-rule-geosite.txt
+          wget -O custom_rule.sh https://raw.githubusercontent.com/yaotthaha/v2ray-rules-dat/master/custom_rule.sh
+          chmod +x custom_rule.sh
+          ./custom_rule.sh
+          rm -rf custom_rule.sh
           echo "Add OK [gdut-eduweb]"
 
       - name: Build geosite.dat file
