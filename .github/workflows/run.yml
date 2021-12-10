@@ -2,7 +2,7 @@ name: Build V2Ray rules dat files
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 22 * * *"
+    - cron: "0 22 */2 * *"
   push:
     branches:
       - master
@@ -63,8 +63,8 @@ jobs:
 
       - name: Get geoip.dat relative files
         run: |
-          wget https://github.com/Loyalsoldier/geoip/raw/release/geoip.dat
-          wget https://github.com/Loyalsoldier/geoip/raw/release/geoip.dat.sha256sum
+          wget https://github.com/yaotthaha/geoip/raw/release/geoip.dat
+          wget https://github.com/yaotthaha/geoip/raw/release/geoip.dat.sha256sum
 
       - name: Generate GFWList domains
         run: |
@@ -168,6 +168,12 @@ jobs:
           curl -sSL $WIN_UPDATE | grep "0.0.0.0" | awk '{print $2}' > win-update.txt
           curl -sSL $WIN_EXTRA | grep "0.0.0.0" | awk '{print $2}' > ./community/data/win-extra
           curl -sSL $WIN_EXTRA | grep "0.0.0.0" | awk '{print $2}' > win-extra.txt
+          
+      - name: Add Personal Rule
+        run: |
+          cd community/data || exit 1
+          wget -O gdut-eduweb https://raw.githubusercontent.com/yaotthaha/gdut-edu-rule/master/gdut-edu-rule-geosite.txt
+          echo "Add OK [gdut-eduweb]"
 
       - name: Build geosite.dat file
         run: |
