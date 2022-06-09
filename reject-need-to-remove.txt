@@ -4,6 +4,7 @@ addthisedge.com
 alimama.alicdn.com
 alimama.com
 analytics.google.com
+app.chat.xiaomi.net
 bdtj.tagtic.cn
 d.ifengimg.com
 icons.mydrivers.com
@@ -14,8 +15,10 @@ mtalk.google.com
 mx.technolutions.net
 offer.alibaba.com
 pingjs.qq.com
+resolver.msg.xiaomi.net
 s.youtube.com
 sf3-ttcdn-tos.pstatp.com
+t.co
 tagtic.cn
 tongji.baidu.com
 tv.sohu.com
